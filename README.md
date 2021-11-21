@@ -14,9 +14,13 @@
 
 ### If you're looking for Image caching visit [@georstat/react-native-image-cache](https://github.com/georstat/react-native-image-cache)
 
-### Preview:
+### Default Gallery Preview:
 
-![@georstat:react-native-image-gallery_demo](https://user-images.githubusercontent.com/717975/142756257-a8b76848-d8e6-44cb-b90d-ded18f8d0665.gif)
+![@georstat:react-native-image-gallery default_demo](https://user-images.githubusercontent.com/717975/142775028-32cdfdd0-feef-48e8-9dfc-b749d5e01972.gif)
+
+### Custom Gallery Preview:
+
+![@georstat:react-native-image-gallery default_demo](https://user-images.githubusercontent.com/717975/142775046-475bfc3b-6326-4b3d-afa3-58189e003043.gif)
 
 
 ## Installation
