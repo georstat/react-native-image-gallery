@@ -2,7 +2,7 @@
 # OSX
 #
 .DS_Store
-
+.idea
 # XDE
 .expo/
 
