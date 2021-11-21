@@ -1,0 +1,90 @@
+{
+  "name": "@georstat/react-native-image-gallery",
+  "version": "1.0.0",
+  "access": "public",
+  "description": "React Native Image Gallery with Thumbnails",
+  "main": "lib/commonjs/index.js",
+  "module": "lib/module/index.js",
+  "types": "lib/typescript/index.d.ts",
+  "react-native": "src/index.ts",
+  "files": [
+    "src",
+    "lib"
+  ],
+  "keywords": [
+    "react-native",
+    "ios",
+    "android",
+    "image-cache",
+    "image-gallery",
+    "image",
+    "gallery",
+    "photo",
+    "photo-gallery"
+  ],
+  "repository": "https://github.com/georstat/react-native-image-gallery",
+  "author": "Efstathios Ntonas - George Bakogiannis - George Kallinikos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/georstat/react-native-image-gallery/issues"
+  },
+  "homepage": "https://github.com/georstat/react-native-image-gallery",
+  "scripts": {
+    "typescript": "tsc --noEmit",
+    "lint": "eslint \"**/*.{js,ts,tsx}\"",
+    "build": "bob build && yarn copy-dts",
+    "copy-dts": "copyfiles -u 1 \"src/**/*.d.ts\" lib/typescript",
+    "release": "release-it",
+    "example": "yarn --cwd example",
+    "prettier": "prettier \"**/*.{ts,tsx,js}\" --write",
+    "bootstrap": "yarn install && yarn example"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^15.0.0",
+    "@commitlint/config-conventional": "^15.0.0",
+    "@react-native-community/eslint-config": "^3.0.1",
+    "@release-it/conventional-changelog": "^3.3.0",
+    "@types/react": "^17.0.35",
+    "@types/react-native": "^0.66.5",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "auto-changelog": "^2.3.0",
+    "copyfiles": "^2.4.1",
+    "eslint": "^8.3.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-flowtype": "^8.0.3",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-config-airbnb": "^19.0.0",
+    "eslint-config-airbnb-typescript": "^16.0.0",
+    "eslint-import-resolver-typescript": "^2.5.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "husky": "^7.0.4",
+    "prettier": "^2.4.1",
+    "react": "~17.0.2",
+    "react-native": "^0.64.2",
+    "react-native-builder-bob": "^0.18.2",
+    "release-it": "^14.11.8",
+    "typescript": "^4.5.2"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*",
+    "react-native-gesture-handler": "^1.10.3"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "yarn lint && yarn typescript"
+    }
+  },
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      "commonjs",
+      "module",
+      "typescript"
+    ]
+  }
+}
