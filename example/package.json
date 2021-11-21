@@ -14,8 +14,7 @@
     "crypto-js": "^4.1.1",
     "react": "^17.0.2",
     "react-native": "0.66.3",
-    "react-native-file-access": "^2.0.0",
-    "react-native-gesture-handler": "^1.10.3"
+    "react-native-file-access": "^2.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
