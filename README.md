@@ -73,6 +73,7 @@ For more info check [example](https://github.com/georstat/react-native-image-gal
 This example uses [georstat/react-native-image-cache](https://github.com/georstat/react-native-image-cache) for image caching
 
 ```tsx
+import { ImageGallery } from '@georstat/react-native-image-gallery';
 import { CacheManager, CachedImage } from '@georstat/react-native-image-cache';
 import { Dirs } from 'react-native-file-access';
 
