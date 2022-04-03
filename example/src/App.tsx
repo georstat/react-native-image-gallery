@@ -3,7 +3,10 @@ import { Button, SafeAreaView, StyleSheet, View } from 'react-native';
 import { Dirs } from 'react-native-file-access';
 import { CachedImage, CacheManager } from '@georstat/react-native-image-cache';
 
-import { ImageGallery } from '@georstat/react-native-image-gallery';
+import {
+  ImageGallery,
+  ImageObject,
+} from '@georstat/react-native-image-gallery';
 import { images } from './helpers';
 import Header from './Header';
 import Footer from './Footer';
@@ -14,10 +17,6 @@ CacheManager.config = {
   sourceAnimationDuration: 1000,
   thumbnailAnimationDuration: 1000,
 };
-
-interface Image {
-  url: string;
-}
 
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,7 +36,7 @@ const App = () => {
     return <Footer total={images.length} currentIndex={currentIndex} />;
   };
 
-  const renderCustomImage = (image: Image) => {
+  const renderCustomImage = (image: ImageObject) => {
     return (
       <View style={styles.customImageContainer}>
         <CachedImage
