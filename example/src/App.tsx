@@ -28,11 +28,11 @@ const App = () => {
   const closeGallery = () => setIsOpen(false);
   const closeCustomGallery = () => setIsCustomGalleryOpen(false);
 
-  const renderHeaderComponent = (_image: any, currentIndex: number) => {
+  const renderHeaderComponent = (_image: ImageObject, currentIndex: number) => {
     return <Header currentIndex={currentIndex} />;
   };
 
-  const renderFooterComponent = (_image: any, currentIndex: number) => {
+  const renderFooterComponent = (_image: ImageObject, currentIndex: number) => {
     return <Footer total={images.length} currentIndex={currentIndex} />;
   };
 

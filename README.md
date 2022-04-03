@@ -92,11 +92,11 @@ const MyGallery = () => {
   const openGallery = () => setIsOpen(true);
   const closeGallery = () => setIsOpen(false);
 
-  const renderHeaderComponent = (image: any, currentIndex: number) => {
+  const renderHeaderComponent = (image: ImageObject, currentIndex: number) => {
     return <Header currentIndex={currentIndex} />;
   };
 
-  const renderFooterComponent = (image: any, currentIndex: number) => {
+  const renderFooterComponent = (image: ImageObject, currentIndex: number) => {
     return <Footer total={images.length} currentIndex={currentIndex} />;
   };
 

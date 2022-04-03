@@ -11,6 +11,7 @@ export interface IProps {
   thumbColor?: string;
   thumbSize?: number;
   thumbResizeMode?: ImageResizeMode;
+  disableSwipe?: boolean;
 
   renderCustomThumb?: (
     item: ImageObject,

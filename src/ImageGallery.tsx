@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import { ImageObject, IProps, RenderImageProps } from './types';
 import ImagePreview from './ImagePreview';
-import PanContainer from './PanContainer';
+import SwipeContainer from './SwipeContainer';
 
 const { height: deviceHeight, width: deviceWidth } = Dimensions.get('window');
 
@@ -37,6 +37,7 @@ const ImageGallery = (props: IProps & typeof defaultProps) => {
     thumbColor,
     thumbResizeMode,
     thumbSize,
+    disableSwipe,
   } = props;
 
   const [activeIndex, setActiveIndex] = useState(0);
@@ -148,7 +149,11 @@ const ImageGallery = (props: IProps & typeof defaultProps) => {
   return (
     <Modal animationType={isOpen ? 'slide' : 'fade'} visible={isOpen}>
       <View style={styles.container}>
-        <PanContainer setIsDragging={setIsDragging} close={close}>
+        <SwipeContainer
+          disableSwipe={disableSwipe}
+          setIsDragging={setIsDragging}
+          close={close}
+        >
           <FlatList
             initialScrollIndex={initialIndex}
             getItemLayout={getImageLayout}
@@ -162,7 +167,7 @@ const ImageGallery = (props: IProps & typeof defaultProps) => {
             scrollEnabled={!isDragging}
             showsHorizontalScrollIndicator={false}
           />
-        </PanContainer>
+        </SwipeContainer>
         {hideThumbs ? null : (
           <FlatList
             initialScrollIndex={initialIndex}

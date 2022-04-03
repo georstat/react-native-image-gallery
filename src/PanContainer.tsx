@@ -14,7 +14,7 @@ const PanContainer = ({
   setIsDragging,
 }: {
   children: any;
-  close: any;
+  close: () => void;
   setIsDragging: any;
 }) => {
   const translationXY = useRef(new Animated.ValueXY()).current;
