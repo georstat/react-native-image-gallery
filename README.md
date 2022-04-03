@@ -139,6 +139,7 @@ const MyGallery = () => {
 | `images`                | `Array`   | (**Required**) array of objects. Every image must have a `url` (required), a thumbUrl (optional) and id (optional) and any other info you need     |
 | `resizeMode`            | `string`  | React Native Image component [resizeMode](https://reactnative.dev/docs/image#resizemode) defaults to `contain`, used on images                     |
 | `close`                 | `Func`    | (**Required**) function to close the gallery image                                                                                                 |
+| `disableSwipe`          | `Boolean` | Disables the swipe gesture.                                                                                                                        |
 | `initialIndex`          | `Number`  | Initial index of image to snap when opening the gallery                                                                                            |
 | `thumbSize`             | `Number`  | Height and width of the thumb, defaults to `48`                                                                                                    |
 | `thumbColor`            | `string`  | Outline color of selected thumb, defaults to `#d9b44a`                                                                                             |
