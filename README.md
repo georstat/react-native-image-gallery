@@ -75,6 +75,10 @@ This example uses [georstat/react-native-image-cache](https://github.com/georsta
 ```tsx
 import { CacheManager, CachedImage } from '@georstat/react-native-image-cache';
 import { Dirs } from 'react-native-file-access';
+import {
+  ImageGallery,
+  ImageObject,
+} from '@georstat/react-native-image-gallery';
 
 CacheManager.config = {
   baseDir: `${Dirs.CacheDir}/images_cache/`,
@@ -96,7 +100,7 @@ const MyGallery = () => {
     return <Footer total={images.length} currentIndex={currentIndex} />;
   };
 
-  const renderCustomImage = (image: Image) => {
+  const renderCustomImage = (image: ImageObject) => {
     return (
       <View style={styles.customImageContainer}>
         <CachedImage
