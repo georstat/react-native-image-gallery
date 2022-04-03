@@ -73,6 +73,7 @@ For more info check [example](https://github.com/georstat/react-native-image-gal
 This example uses [georstat/react-native-image-cache](https://github.com/georstat/react-native-image-cache) for image caching
 
 ```tsx
+import { ImageGallery } from '@georstat/react-native-image-gallery';
 import { CacheManager, CachedImage } from '@georstat/react-native-image-cache';
 import { Dirs } from 'react-native-file-access';
 import {
@@ -134,7 +135,7 @@ const MyGallery = () => {
 #### `CachedImage` accepts the following props:
 
 | Properties              | PropType  | Description                                                                                                                                        |
-| ----------------------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+|-------------------------|-----------|----------------------------------------------------------------------------------------------------------------------------------------------------|
 | `isOpen`                | `Boolean` | (**Required**) when to show the gallery.                                                                                                           |
 | `images`                | `Array`   | (**Required**) array of objects. Every image must have a `url` (required), a thumbUrl (optional) and id (optional) and any other info you need     |
 | `resizeMode`            | `string`  | React Native Image component [resizeMode](https://reactnative.dev/docs/image#resizemode) defaults to `contain`, used on images                     |
@@ -152,8 +153,9 @@ const MyGallery = () => {
 
 ## Todo:
 
-- Add zoom factor
-- Add prop to keep zoom and double tap to zoom out
+- [ ] Add zoom factor
+
+- [ ] Add prop to keep zoom and double tap to zoom out
 
 ## Authors:
 
