@@ -38,6 +38,7 @@ const ImageGallery = (props: IProps & typeof defaultProps) => {
     thumbResizeMode,
     thumbSize,
     disableSwipe,
+    style,
   } = props;
 
   const [activeIndex, setActiveIndex] = useState(0);
@@ -148,7 +149,7 @@ const ImageGallery = (props: IProps & typeof defaultProps) => {
 
   return (
     <Modal animationType={isOpen ? 'slide' : 'fade'} visible={isOpen}>
-      <View style={styles.container}>
+      <View style={[styles.container, style]}>
         <SwipeContainer
           disableSwipe={disableSwipe}
           setIsDragging={setIsDragging}

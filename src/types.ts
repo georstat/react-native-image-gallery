@@ -1,5 +1,5 @@
 import React from 'react';
-import { ImageResizeMode } from 'react-native';
+import { ImageResizeMode, ViewStyle } from 'react-native';
 
 export interface IProps {
   close: () => void;
@@ -12,6 +12,7 @@ export interface IProps {
   thumbSize?: number;
   thumbResizeMode?: ImageResizeMode;
   disableSwipe?: boolean;
+  style?: ViewStyle;
 
   renderCustomThumb?: (
     item: ImageObject,
