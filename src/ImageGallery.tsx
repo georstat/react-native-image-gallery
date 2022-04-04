@@ -37,6 +37,7 @@ const ImageGallery = (props: IProps & typeof defaultProps) => {
     thumbColor,
     thumbResizeMode,
     thumbSize,
+    style,
   } = props;
 
   const [activeIndex, setActiveIndex] = useState(0);
@@ -147,7 +148,7 @@ const ImageGallery = (props: IProps & typeof defaultProps) => {
 
   return (
     <Modal animationType={isOpen ? 'slide' : 'fade'} visible={isOpen}>
-      <View style={styles.container}>
+      <View style={[styles.container, style]}>
         <PanContainer setIsDragging={setIsDragging} close={close}>
           <FlatList
             initialScrollIndex={initialIndex}
