@@ -76,6 +76,10 @@ This example uses [georstat/react-native-image-cache](https://github.com/georsta
 import { ImageGallery } from '@georstat/react-native-image-gallery';
 import { CacheManager, CachedImage } from '@georstat/react-native-image-cache';
 import { Dirs } from 'react-native-file-access';
+import {
+  ImageGallery,
+  ImageObject,
+} from '@georstat/react-native-image-gallery';
 
 CacheManager.config = {
   baseDir: `${Dirs.CacheDir}/images_cache/`,
@@ -89,15 +93,15 @@ const MyGallery = () => {
   const openGallery = () => setIsOpen(true);
   const closeGallery = () => setIsOpen(false);
 
-  const renderHeaderComponent = (image: any, currentIndex: number) => {
+  const renderHeaderComponent = (image: ImageObject, currentIndex: number) => {
     return <Header currentIndex={currentIndex} />;
   };
 
-  const renderFooterComponent = (image: any, currentIndex: number) => {
+  const renderFooterComponent = (image: ImageObject, currentIndex: number) => {
     return <Footer total={images.length} currentIndex={currentIndex} />;
   };
 
-  const renderCustomImage = (image: Image) => {
+  const renderCustomImage = (image: ImageObject) => {
     return (
       <View style={styles.customImageContainer}>
         <CachedImage
@@ -136,6 +140,7 @@ const MyGallery = () => {
 | `images`                | `Array`   | (**Required**) array of objects. Every image must have a `url` (required), a thumbUrl (optional) and id (optional) and any other info you need     |
 | `resizeMode`            | `string`  | React Native Image component [resizeMode](https://reactnative.dev/docs/image#resizemode) defaults to `contain`, used on images                     |
 | `close`                 | `Func`    | (**Required**) function to close the gallery image                                                                                                 |
+| `disableSwipe`          | `Boolean` | Disables the swipe gesture.                                                                                                                        |
 | `initialIndex`          | `Number`  | Initial index of image to snap when opening the gallery                                                                                            |
 | `thumbSize`             | `Number`  | Height and width of the thumb, defaults to `48`                                                                                                    |
 | `thumbColor`            | `string`  | Outline color of selected thumb, defaults to `#d9b44a`                                                                                             |
