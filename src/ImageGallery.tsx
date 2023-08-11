@@ -147,7 +147,7 @@ const ImageGallery = (props: IProps & typeof defaultProps) => {
   );
 
   return (
-    <Modal animationType={isOpen ? 'slide' : 'fade'} visible={isOpen}>
+    <Modal animationType={isOpen ? 'slide' : 'fade'} visible={isOpen} onRequestClose={close}>
       <View style={styles.container}>
         <SwipeContainer
           disableSwipe={disableSwipe}
