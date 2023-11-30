@@ -32,7 +32,8 @@ export interface IProps {
 
   renderFooterComponent?: (
     item: ImageObject,
-    currentIndex: number
+    currentIndex: number,
+    title: string
   ) => React.ReactNode;
 }
 
@@ -44,12 +45,14 @@ export interface HeaderProps {
 export interface FooterProps {
   currentIndex: number;
   total: number;
+  title?: string;
 }
 
 export interface ImageObject {
   id?: string | number;
   thumbUrl?: string;
   url: string;
+  title: string;
 }
 
 export interface ImagePreviewProps {
