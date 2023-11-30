@@ -1,6 +1,6 @@
 {
-  "name": "@shamamit11/react-native-image-gallery",
-  "version": "1.1.0",
+  "name": "react-native-image-gallery-2",
+  "version": "1.1.1",
   "access": "public",
   "description": "React Native Image Gallery with Thumbnails - modified from original code",
   "main": "lib/commonjs/index.js",
@@ -22,7 +22,10 @@
     "photo",
     "photo-gallery"
   ],
-  "repository": "https://github.com/shamamit11/react-native-image-gallery",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shamamit11/react-native-image-gallery.git"
+  },
   "original-repository": "https://github.com/georstat/react-native-image-gallery",
   "original-author": "Efstathios Ntonas - George Bakogiannis - George Kallinikos",
   "author": "Amit Sharma",
