@@ -4,10 +4,13 @@ import {
   FlatList,
   Image,
   Modal,
+  Platform,
   StyleSheet,
   TouchableOpacity,
   View,
 } from 'react-native';
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+
 import { ImageObject, IProps, RenderImageProps } from './types';
 import ImagePreview from './ImagePreview';
 import SwipeContainer from './SwipeContainer';
@@ -100,11 +103,11 @@ const ImageGallery = (props: IProps & typeof defaultProps) => {
             style={
               activeIndex === index
                 ? [
-                    styles.thumb,
-                    styles.activeThumb,
-                    { borderColor: thumbColor },
-                    { width: thumbSize, height: thumbSize },
-                  ]
+                  styles.thumb,
+                  styles.activeThumb,
+                  { borderColor: thumbColor },
+                  { width: thumbSize, height: thumbSize },
+                ]
                 : [styles.thumb, { width: thumbSize, height: thumbSize }]
             }
             source={{ uri: item.thumbUrl ? item.thumbUrl : item.url }}
@@ -149,6 +152,9 @@ const ImageGallery = (props: IProps & typeof defaultProps) => {
   return (
     <Modal animationType={isOpen ? 'slide' : 'fade'} visible={isOpen}>
       <View style={styles.container}>
+        <TouchableOpacity onPress={close} style={styles.closeIcon}>
+          <MaterialCommunityIcons name="close" color={"white"} size={30} />
+        </TouchableOpacity>
         <SwipeContainer
           disableSwipe={disableSwipe}
           setIsDragging={setIsDragging}
@@ -190,7 +196,7 @@ const ImageGallery = (props: IProps & typeof defaultProps) => {
         ) : null}
         {renderFooterComponent ? (
           <View style={styles.footer}>
-            {renderFooterComponent(images[activeIndex], activeIndex)}
+            {renderFooterComponent(images[activeIndex], activeIndex, images[activeIndex].title)}
           </View>
         ) : null}
       </View>
@@ -207,7 +213,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     width: deviceWidth,
   },
-
+  closeIcon: {
+    position: 'absolute',
+    top: Platform.OS == 'ios' ? 70 : 50,
+    right: Platform.OS == 'ios' ? 20 : 20,
+    zIndex: 1
+  },
   header: {
     position: 'absolute',
     top: 0,
